@@ -36,7 +36,6 @@ contactForm.addEventListener("submit", function(event) {
 
     // Create the WhatsApp message
     const whatsappMessage =
-        `Hello, I received a message from my website.%0A%0A` +
         `Name: ${name}%0A` +
         `Email: ${email}%0A%0A` +
         `Message:%0A${message}`;
