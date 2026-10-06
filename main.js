@@ -19,3 +19,31 @@ window.onscroll = () => {
     menu.classList.remove('bx-x');
     navlist.classList.remove('active');
 };
+
+// Send information to WhatsApp
+const contactForm = document.querySelector("#contactForm");
+
+contactForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Get the information 
+    const name = document.querySelector("#name").value;
+    const email = document.querySelector("#email").value;
+    const message = document.querySelector("#message").value;
+
+    // Your WhatsApp number
+    const phoneNumber = "27639206567";
+
+    // Create the WhatsApp message
+    const whatsappMessage =
+        `Hello, I received a message from my website.%0A%0A` +
+        `Name: ${name}%0A` +
+        `Email: ${email}%0A%0A` +
+        `Message:%0A${message}`;
+
+    // Open WhatsApp
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+
+    window.open(whatsappURL, "_blank");
+});
+
